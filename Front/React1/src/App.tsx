@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import CountButton from "./components/CountButton";
 import AxiosButton from "./components/AxiosButton";
+import SelectUserById from "./components/SelectUserById";
 import type { TodoType } from "./types/todotype";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       <AxiosButton onGetTodos={getTodos}></AxiosButton>
       <ul>
         {todos.map((todo) => (
-          <li className={todo.completed ? 'completed' : ''}>
+          <li className={todo.completed ? "completed" : ""}>
             {todo.userId} : {todo.id} : {todo.completed} {todo.title}
           </li>
         ))}
@@ -34,6 +35,7 @@ function App() {
           <li>{todo.completed}</li>
         ))}
       </ul>
+      <SelectUserById />
     </>
   );
 }
